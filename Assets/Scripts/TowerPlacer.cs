@@ -24,7 +24,7 @@ public class TowerPlacer : MonoBehaviour
             HandleGhostTowerPlacement();
         }
 
-        if (Input.GetMouseButtonDown(0) && isPlacingTower) // Left click to place tower
+        if (Input.GetMouseButton(0) && isPlacingTower) // Left click to place tower
         {
             Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int cellPosition = towerTilemap.WorldToCell(mouseWorldPos); // Convert to tilemap grid position

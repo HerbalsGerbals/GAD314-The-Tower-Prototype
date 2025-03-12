@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class ArrowTower : MonoBehaviour
 {
-    public GameObject projectilePrefab;
-    public Transform firePoint;
-    public float fireRate = 1f;
-    private float fireCooldown = 0f;
-    public float attackRange = 5f;  // Range in which tower can detect enemies
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float fireRate = 1f;
+    [SerializeField] private float fireCooldown = 0f;
+    [SerializeField] private float attackRange = 5f;  // Range in which tower can detect enemies
 
     void Update()
     {

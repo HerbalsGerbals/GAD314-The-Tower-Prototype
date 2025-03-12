@@ -35,7 +35,7 @@ public class TowerUISelection : MonoBehaviour
             if (isPlacingTower)
             {
                 // Create the ghost tower when starting placement
-                CreateGhostTower(towerIndex);
+                //CreateGhostTower(towerIndex);
             }
             else
             {
@@ -48,20 +48,20 @@ public class TowerUISelection : MonoBehaviour
         }
     }
 
-    void CreateGhostTower(int towerIndex)
-    {
-        // Create a ghost tower object and make it semi-transparent
-        ghostTower = Instantiate(towerPrefabs[towerIndex]);
-        Renderer renderer = ghostTower.GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            Color color = renderer.material.color;
-            color.a = 0.5f; // Set transparency to 50%
-            renderer.material.color = color;
-        }
+    //void CreateGhostTower(int towerIndex)
+    //{
+    //    // Create a ghost tower object and make it semi-transparent
+    //    ghostTower = Instantiate(towerPrefabs[towerIndex]);
+    //    Renderer renderer = ghostTower.GetComponent<Renderer>();
+    //    if (renderer != null)
+    //    {
+    //        Color color = renderer.material.color;
+    //        color.a = 0.5f; // Set transparency to 50%
+    //        renderer.material.color = color;
+    //    }
 
-        ghostTower.SetActive(true);
-    }
+    //    ghostTower.SetActive(true);
+    //}
 
     void DestroyGhostTower()
     {
