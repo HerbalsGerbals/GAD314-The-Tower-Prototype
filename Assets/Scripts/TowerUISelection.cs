@@ -8,7 +8,7 @@ public class TowerUISelection : MonoBehaviour
     public GameObject[] towerPrefabs; 
     private TowerPlacer towerPlacerScript; 
 
-    private bool isPlacingTower = false; 
+    public bool isPlacingTower = false; 
     private GameObject ghostTower; // The ghost tower object
 
     void Start()
@@ -32,16 +32,16 @@ public class TowerUISelection : MonoBehaviour
             // Toggle the placement mode for the selected tower
             isPlacingTower = !isPlacingTower;
 
-            if (isPlacingTower)
-            {
-                // Create the ghost tower when starting placement
-                //CreateGhostTower(towerIndex);
-            }
-            else
-            {
-                // Destroy the ghost tower when exiting placement mode
-                DestroyGhostTower();
-            }
+            //if (isPlacingTower)
+            //{
+            //    // Create the ghost tower when starting placement
+            //    //CreateGhostTower(towerIndex);
+            //}
+            //else
+            //{
+            //    // Destroy the ghost tower when exiting placement mode
+            //    DestroyGhostTower();
+            //}
 
             // Set the current tower prefab on the TowerPlacer script
             towerPlacerScript.SetCurrentTower(towerIndex, isPlacingTower);
@@ -63,11 +63,11 @@ public class TowerUISelection : MonoBehaviour
     //    ghostTower.SetActive(true);
     //}
 
-    void DestroyGhostTower()
-    {
-        if (ghostTower != null)
-        {
-            Destroy(ghostTower);
-        }
-    }
+    //void DestroyGhostTower()
+    //{
+    //    if (ghostTower != null)
+    //    {
+    //        Destroy(ghostTower);
+    //    }
+    //}
 }

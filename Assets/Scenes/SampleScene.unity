@@ -268,7 +268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -528.7, y: 243}
+  m_AnchoredPosition: {x: -634, y: 259}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &278575989
@@ -4089,7 +4089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -528, y: 1}
+  m_AnchoredPosition: {x: -634, y: 0}
   m_SizeDelta: {x: 0, y: 243}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &876674013
@@ -7108,6 +7108,7 @@ MonoBehaviour:
   - {fileID: 226923654}
   towerPrefabs:
   - {fileID: 5051765820062888502, guid: 0dd31510139275e4daa587106bd4b58e, type: 3}
+  isPlacingTower: 0
 --- !u!114 &1816423071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7316,6 +7317,10 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1477115038139901886, guid: 57810eec63892784380e99fc6d0441a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477115038139901886, guid: 57810eec63892784380e99fc6d0441a2, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -7426,11 +7431,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 240307302328691232, guid: db2c4720d47616540a8d3442520683cc, type: 3}
       propertyPath: spawnInterval
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 240307302328691232, guid: db2c4720d47616540a8d3442520683cc, type: 3}
       propertyPath: enemiesPerWave
-      value: 100
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 240307302328691232, guid: db2c4720d47616540a8d3442520683cc, type: 3}
       propertyPath: 'waypoints.Array.data[0]'

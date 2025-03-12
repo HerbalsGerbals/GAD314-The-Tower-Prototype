@@ -60,6 +60,7 @@ public class TowerPlacer : MonoBehaviour
         // Place the actual tower on the tilemap
         Vector3 placePosition = towerTilemap.GetCellCenterWorld(cellPosition);
         Instantiate(currentTowerPrefab, placePosition, Quaternion.identity);
+        FindFirstObjectByType<TowerUISelection>().isPlacingTower = false;
     }
 
     public void SetCurrentTower(int towerIndex, bool isPlacing)
