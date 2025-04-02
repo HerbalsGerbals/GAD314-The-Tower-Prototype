@@ -14,7 +14,7 @@ public class TowerUISelection : MonoBehaviour
     void Start()
     {
         // Find the TowerPlacer script on the same object 
-        towerPlacerScript = FindObjectOfType<TowerPlacer>();
+        towerPlacerScript = FindAnyObjectByType<TowerPlacer>();
 
         // UI buttons to select towers
         foreach (Button button in towerButtons)

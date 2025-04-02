@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     private Vector2 moveDirection;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +28,7 @@ public class Enemy : MonoBehaviour
         moveSpeed = 2;
         health = maxHealth;
         target = GameObject.Find("Player").transform;
-        
+
     }
 
     // Update is called once per frame
@@ -48,7 +47,7 @@ public class Enemy : MonoBehaviour
         slime.SetTrigger("slimeDamaged");
         if (health <= 0)
         {
-            StartCoroutine(SlimeDeath());       
+            StartCoroutine(SlimeDeath());
         }
     }
     IEnumerator SlimeDeath()
@@ -70,6 +69,14 @@ public class Enemy : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }
+    }
+
+    IEnumerator StartMovement()
+    {
+        moveSpeed = 0;
+        Debug.Log("Movement Coruoutine started");
+        yield return new WaitForSeconds(2f);
+        moveSpeed = 2;
     }
 
 }

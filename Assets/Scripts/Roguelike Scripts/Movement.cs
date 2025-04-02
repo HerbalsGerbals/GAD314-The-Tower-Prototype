@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     private bool facingLeft = true;
 
     [SerializeField] private Transform Aim;
-    bool isWalking = false;
+    public bool isWalking = false;
 
     // Start is called before the first frame update
     void Start()
