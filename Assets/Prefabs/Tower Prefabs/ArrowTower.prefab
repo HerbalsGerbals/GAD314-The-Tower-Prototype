@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5702012137003196363}
   - component: {fileID: 7559007383462973559}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: ArrowTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16214824, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -179,7 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec9199828c370c4596437bdb568fd00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5357825579986042606, guid: 84f36e4083748e04b9961879128b9d7f, type: 3}
+  projectilePrefab: {fileID: 2228906572996420193, guid: 0d73c48970cc6184db1201942c6867d5, type: 3}
   firePoint: {fileID: 1543097996325241878}
   fireRate: 1
+  fireCooldown: 0
   attackRange: 5
