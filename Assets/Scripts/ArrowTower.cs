@@ -1,12 +1,16 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ArrowTower : MonoBehaviour
 {
+    [Header("Tower Settings")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float fireRate = 1f;
-    [SerializeField] private float fireCooldown = 0f;
+    [SerializeField] private float fireRate = 1f; // fire rate
+    [SerializeField] private float fireCooldown = 0f;  // how long before can shoot again
     [SerializeField] private float attackRange = 5f;  // Range in which tower can detect enemies
+
+    [Header("Editor Gizmos")]
+    [SerializeField] private Color rangeGizmoColor = Color.green;
 
     void Update()
     {
@@ -29,7 +33,7 @@ public class ArrowTower : MonoBehaviour
 
         if (projScript != null)
         {
-            projScript.SetTarget(target);  // Pass target to the projectile
+            projScript.SetTarget(target.transform);
         }
     }
 
@@ -49,5 +53,11 @@ public class ArrowTower : MonoBehaviour
             }
         }
         return nearestEnemy;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = rangeGizmoColor;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

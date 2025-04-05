@@ -182,4 +182,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5357825579986042606, guid: 84f36e4083748e04b9961879128b9d7f, type: 3}
   firePoint: {fileID: 1543097996325241878}
   fireRate: 1
+  fireCooldown: 0
   attackRange: 5
+  rangeGizmoColor: {r: 0, g: 0.09941673, b: 1, a: 1}
