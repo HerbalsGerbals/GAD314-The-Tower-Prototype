@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class BombProjectile : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
     [SerializeField] private float damage = 5f;
+    [SerializeField] private float explosionRadius = 2f;
 
     private Transform target;
 
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
+        Debug.Log("Target set: " + target?.name);
     }
 
     private void Update()
@@ -25,7 +27,7 @@ public class Projectile : MonoBehaviour
 
         if (direction.magnitude <= distanceThisFrame)
         {
-            HitTarget();
+            Explosion();
             return;
         }
 
@@ -33,14 +35,25 @@ public class Projectile : MonoBehaviour
         transform.LookAt(target);
     }
 
-    private void HitTarget()
+    private void Explosion()
     {
-        BalloonEnemey enemy = target.GetComponent<BalloonEnemey>();
-        if (enemy != null)
+        Collider2D[] hitCollider = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        foreach (Collider2D hit in hitCollider)
         {
-            enemy.TakeDamage(damage);
+            BalloonEnemey enemey = hit.GetComponent<BalloonEnemey>();
+            if (enemey != null)
+            {
+                enemey.TakeDamage(damage);
+                
+            }
         }
 
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }

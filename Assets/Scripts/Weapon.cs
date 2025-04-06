@@ -10,10 +10,10 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Enemy Takes Damage
+        //BallonEnemey Takes Damage
         if (other.tag == "Enemy")
         {
-            other.GetComponent<Enemy>().TakeDamage(damage);
+            other.GetComponent<BallonEnemey>().TakeDamage(damage);
             Debug.Log("Enemy Hit");
         }
 

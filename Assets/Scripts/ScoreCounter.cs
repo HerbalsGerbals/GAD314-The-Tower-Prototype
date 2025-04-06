@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
-    [SerializeField] private Enemy enemy;
+    [SerializeField] private BallonEnemey enemy;
     public float Score;
     [SerializeField] private TextMeshProUGUI scoreText;
   

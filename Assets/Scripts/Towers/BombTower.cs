@@ -1,17 +1,18 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using static UnityEngine.GraphicsBuffer;
 
 public class BombTower : MonoBehaviour
 {
-    [SerializeField] private float fireRate = 1f;
-    [SerializeField] private float fireCooldown = 1f;
-    [SerializeField] private float attackRange = 5f;
-    [SerializeField] private GameObject projectilePrefab;
+    [Header("Tower Settings")]
+    [SerializeField] private GameObject bombProjectilePrefab;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private float fireRate = 1f;
+    [SerializeField] private float fireCooldown = 0f;
+    [SerializeField] private float attackRange = 5f;
 
+    [Header("Gizmos")]
+    [SerializeField] private Color rangeGizmoColor = Color.blue;
 
-    private void Update()
+    void Update()
     {
         fireCooldown -= Time.deltaTime;
         if (fireCooldown <= 0f)
@@ -19,25 +20,26 @@ public class BombTower : MonoBehaviour
             GameObject target = FindNearestEnemy();
             if (target != null)
             {
-                ShootBombs(target);
+                Fire(target);
                 fireCooldown = fireRate;
             }
         }
     }
 
-    private void ShootBombs(GameObject target)
+    void Fire(GameObject target)
     {
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-        Projectile projScript = projectile.GetComponent<Projectile>();
+        GameObject projectile = Instantiate(bombProjectilePrefab, firePoint.position, Quaternion.identity);
+        BombProjectile projScript = projectile.GetComponent<BombProjectile>();
 
         if (projScript != null)
         {
-            projScript.SetTarget(target);  // Pass target to the projectile
+            projScript.SetTarget(target.transform);
         }
-
-
+        else
+        {
+            Debug.LogError("BombProjectile script missing from bomb projectile prefab!");
+        }
     }
-
 
     GameObject FindNearestEnemy()
     {
@@ -55,5 +57,11 @@ public class BombTower : MonoBehaviour
             }
         }
         return nearestEnemy;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = rangeGizmoColor;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

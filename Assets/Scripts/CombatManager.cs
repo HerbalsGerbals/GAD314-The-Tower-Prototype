@@ -5,7 +5,7 @@ using UnityEngine;
 public class CombatManager : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private Enemy enemy;
+    [SerializeField] private BallonEnemey enemy;
     public float damage;
 
     // Start is called before the first frame update

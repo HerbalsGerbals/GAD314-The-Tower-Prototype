@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Enemy : MonoBehaviour
+public class BallonEnemey : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] private Animator slime;

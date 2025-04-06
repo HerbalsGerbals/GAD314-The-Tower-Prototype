@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1470226120471790840}
   - component: {fileID: 8029797199552316059}
   - component: {fileID: 5702012137003196363}
-  - component: {fileID: 4674450385482561404}
+  - component: {fileID: -3613055690069553688}
   m_Layer: 0
   m_Name: BombTower
   m_TagString: Untagged
@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.28049088, b: 1, a: 1}
+  m_Color: {r: 0.9801798, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -167,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4674450385482561404
+--- !u!114 &-3613055690069553688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,8 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10768dd1cd47b1e4aa68b30aa6c29af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  fireCooldown: 1
-  attackRange: 5
-  projectilePrefab: {fileID: 1477115038139901886, guid: 5c3a48081ab632543810dc4b5191f557, type: 3}
+  bombProjectilePrefab: {fileID: 1477115038139901886, guid: 5c3a48081ab632543810dc4b5191f557, type: 3}
   firePoint: {fileID: 1470226120471790840}
+  fireRate: 1
+  fireCooldown: 0
+  attackRange: 5
+  rangeGizmoColor: {r: 0, g: 0, b: 1, a: 1}
