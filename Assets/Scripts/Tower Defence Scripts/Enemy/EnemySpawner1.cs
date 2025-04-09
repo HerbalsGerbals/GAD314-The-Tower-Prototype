@@ -35,12 +35,12 @@ public class EnemySpawner1 : MonoBehaviour
 
     private void Update()
     {
-        if (!isSpawning)  return; 
+        if (!isSpawning) return;
 
         timeSinceLastSpawn += Time.deltaTime;
 
         if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
-        {           
+        {
             SpawnEnemy();
             enemiesLeftToSpawn--;
             enemiesAlive++;

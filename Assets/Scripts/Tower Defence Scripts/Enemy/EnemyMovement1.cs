@@ -18,7 +18,7 @@ public class EnemyMovement1 : MonoBehaviour
         target = LevelManager1.main.path[pathIndex];
     }
 
-    private void Update ()
+    private void Update()
     {
         if (Vector2.Distance(target.position, transform.position) <= 0.1f)
         {
@@ -35,10 +35,10 @@ public class EnemyMovement1 : MonoBehaviour
                 target = LevelManager1.main.path[pathIndex];
             }
         }
-           
+
     }
 
-    private void FixedUpdate ()
+    private void FixedUpdate()
     {
         Vector2 direction = (target.position - transform.position).normalized;
         rb.linearVelocity = direction * moveSpeed;
