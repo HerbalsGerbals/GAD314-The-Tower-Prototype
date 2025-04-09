@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5799403539874613740}
   - component: {fileID: 4690451585136966629}
   - component: {fileID: 1459425665753944420}
-  - component: {fileID: 3387623966039124385}
+  - component: {fileID: 2721845105363586550}
+  - component: {fileID: 2252911334442390990}
   m_Layer: 10
   m_Name: EnemyNew
   m_TagString: Enemy
@@ -153,7 +154,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &3387623966039124385
+--- !u!114 &2721845105363586550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +163,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1477115038139901886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c14ad2be48a3a1e4e8f8d713407b811b, type: 3}
+  m_Script: {fileID: 11500000, guid: c506dfd44c28f464e9b798cee1bb406d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+--- !u!114 &2252911334442390990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477115038139901886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba1ab933446b024d91306cb5b6d2954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4690451585136966629}
