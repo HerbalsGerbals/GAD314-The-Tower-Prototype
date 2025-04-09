@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Attack : MonoBehaviour
 {
@@ -20,19 +21,25 @@ public class Attack : MonoBehaviour
     float attackCounter = 0.5f;
     float attackTime;
 
+    public UIManager UIManager;
+
+
     // Update is called once per frame
     void Update()
     {
         CheckMeleeTimer();
         shootTimer += Time.deltaTime;
         attackCounter -= Time.deltaTime;
-        if (Input.GetMouseButtonDown(0))
+        if (UIManager.cameraChanger == true)
         {
-            OnAttack();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OnShoot();
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+            {
+                OnAttack();
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                OnShoot();
+            }
         }
     }
 
@@ -64,7 +71,7 @@ public class Attack : MonoBehaviour
 
     void OnShoot()
     {
-        if(shootTimer > shootCooldown)
+        if (shootTimer > shootCooldown)
         {
             shootTimer = 0;
             GameObject intBullet = Instantiate(bullet, aim.position, aim.rotation);

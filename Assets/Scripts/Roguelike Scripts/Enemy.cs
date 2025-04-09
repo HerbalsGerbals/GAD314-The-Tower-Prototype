@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour
     public bool chasePlayer;
     private Transform target;
     private Vector2 moveDirection;
+    public bool slimeMovementCoroutine;
+    public GameObject UIObject;
+    public UIManager UIManager;
 
 
     // Start is called before the first frame update
@@ -28,7 +31,7 @@ public class Enemy : MonoBehaviour
         moveSpeed = 2;
         health = maxHealth;
         target = GameObject.Find("Player").transform;
-
+        slimeMovementCoroutine = false;
     }
 
     // Update is called once per frame
@@ -39,12 +42,14 @@ public class Enemy : MonoBehaviour
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
         }
+
     }
 
     public void TakeDamage(float damage)
     {
         health -= damage;
         slime.SetTrigger("slimeDamaged");
+        StartCoroutine(SlimeDamage());
         if (health <= 0)
         {
             StartCoroutine(SlimeDeath());
@@ -59,6 +64,13 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator SlimeDamage()
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.15f);
+        rb.constraints = RigidbodyConstraints2D.None;
+    }
+
     public void SlimeMovement()
     {
         rb.linearVelocity = new Vector2(0, 0);
@@ -70,13 +82,4 @@ public class Enemy : MonoBehaviour
             rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }
     }
-
-    IEnumerator StartMovement()
-    {
-        moveSpeed = 0;
-        Debug.Log("Movement Coruoutine started");
-        yield return new WaitForSeconds(2f);
-        moveSpeed = 2;
-    }
-
 }

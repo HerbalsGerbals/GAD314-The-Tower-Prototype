@@ -4272,13 +4272,13 @@ PrefabInstance:
       value: Dungeon Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6529645192413479010, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
+      propertyPath: UIObject
+      value: 
+      objectReference: {fileID: 1233648618}
+    - target: {fileID: 6529645192413479010, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
       propertyPath: UIManager
       value: 
       objectReference: {fileID: 1188576619}
-    - target: {fileID: 6529645192413479010, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
-      propertyPath: moveSpeed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6810736624958848021, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.5
@@ -4319,18 +4319,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8870579147436158579, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8870579147436158579, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8870579147436158579, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4341,7 +4329,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6529645192413479010, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
   m_PrefabInstance: {fileID: 592297489}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1233648618}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99f8de1e7c4b03d44bbef778da98b15a, type: 3}
@@ -7923,6 +7911,7 @@ MonoBehaviour:
   dungeonPanel: {fileID: 235762919}
   cameraControl: {fileID: 1113623687}
   cameraChanger: 0
+  slimeMovement: 0
 --- !u!4 &1188576620
 Transform:
   m_ObjectHideFlags: 0
@@ -7938,6 +7927,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1233648618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 512045532462242205, guid: 3ff72ba4c099a00409390c6c8ebd0145, type: 3}
+  m_PrefabInstance: {fileID: 592297489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1267245297
 GameObject:
   m_ObjectHideFlags: 0
@@ -11032,6 +11026,7 @@ MonoBehaviour:
   aim: {fileID: 410722653}
   bullet: {fileID: 2228906572996420193, guid: 0d73c48970cc6184db1201942c6867d5, type: 3}
   fireForce: 10
+  UIManager: {fileID: 1188576619}
 --- !u!114 &1615419857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11366,7 +11361,6 @@ RectTransform:
   m_Children:
   - {fileID: 876674012}
   - {fileID: 226923657}
-  - {fileID: 2065659560}
   m_Father: {fileID: 1816423074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -14692,11 +14686,11 @@ Transform:
   m_GameObject: {fileID: 2065659559}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -587, y: -302.5, z: 0}
+  m_LocalPosition: {x: 180.66663, y: 96.33334, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1787100091}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2065659561
 MonoBehaviour:
@@ -15077,3 +15071,4 @@ SceneRoots:
   - {fileID: 4123660809464682662}
   - {fileID: 1188576620}
   - {fileID: 1113623688}
+  - {fileID: 2065659560}
