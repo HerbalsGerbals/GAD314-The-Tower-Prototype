@@ -4564,6 +4564,7 @@ GameObject:
   - component: {fileID: 593804143}
   - component: {fileID: 593804142}
   - component: {fileID: 593804141}
+  - component: {fileID: 593804145}
   m_Layer: 0
   m_Name: TowerManager
   m_TagString: Untagged
@@ -4648,6 +4649,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &593804145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593804140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a136c47c4cb46478d3530f6b3955ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerButtons:
+  - {fileID: 1888424512}
+  - {fileID: 553575756}
+  - {fileID: 893299791}
+  towerPrefabs:
+  - {fileID: 5051765820062888502, guid: 0f09557249fa6a6418c6339230fa642b, type: 3}
+  - {fileID: 5051765820062888502, guid: 8c0b3b5816c300f48964c8604892cca6, type: 3}
+  - {fileID: 5051765820062888502, guid: d9a6482ef87b3f941951db55c82b9af8, type: 3}
+  isPlacingTower: 0
 --- !u!1 &604877085
 GameObject:
   m_ObjectHideFlags: 0
