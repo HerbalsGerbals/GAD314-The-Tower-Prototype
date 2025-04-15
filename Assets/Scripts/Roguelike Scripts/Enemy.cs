@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +18,8 @@ public class Enemy : MonoBehaviour
     public bool slimeMovementCoroutine;
     public GameObject UIObject;
     public UIManager UIManager;
+
+    public GameObject coinPrefab; 
 
 
     // Start is called before the first frame update
@@ -61,6 +64,10 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         yield return new WaitForSeconds(0.5f);
 
+        if (coinPrefab != null)
+        {
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 

@@ -136,8 +136,10 @@ MonoBehaviour:
   moveSpeed: 2
   damage: 1
   chasePlayer: 0
-  UIManager: {fileID: 0}
   slimeMovementCoroutine: 0
+  UIObject: {fileID: 0}
+  UIManager: {fileID: 0}
+  coinPrefab: {fileID: 2975601869566885246, guid: b0fd30c79ce7f6c49a2d6ac20a463c43, type: 3}
 --- !u!60 &9066731039707003856
 PolygonCollider2D:
   m_ObjectHideFlags: 0

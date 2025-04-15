@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pHealth = 3;
+        pHealth = 10;
         healthSlider.value = pHealth;
     }
 
