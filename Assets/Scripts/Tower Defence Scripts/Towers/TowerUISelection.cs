@@ -11,31 +11,39 @@ public class TowerUISelection : MonoBehaviour
     public bool isPlacingTower = false; 
     private GameObject ghostTower; // The ghost tower object
 
-    void Start()
-    {
-        // Find the TowerPlacer script on the same object 
-        towerPlacerScript = FindFirstObjectByType<TowerPlacer>();
+    public CoinSystem coinSystem;
 
-        // UI buttons to select towers
-        foreach (Button button in towerButtons)
+    public void Start()
+    {
+        towerPlacerScript = FindFirstObjectByType<TowerPlacer>();
+        coinSystem = FindFirstObjectByType<CoinSystem>();
+
+        for (int i = 0; i < towerButtons.Length; i++)
         {
-            button.onClick.AddListener(() => OnTowerButtonClicked(button));
+            int index = i; // Capture index for the lambda
+            towerButtons[i].onClick.AddListener(() => OnTowerButtonClicked(index));
         }
     }
 
-    void OnTowerButtonClicked(Button button)
+    public void OnTowerButtonClicked(int towerIndex)
     {
-        // Get the index of the selected tower 
-        int towerIndex = Array.IndexOf(towerButtons, button); 
-        if (towerIndex >= 0 && towerIndex < towerPrefabs.Length)
+        GameObject towerPrefab = towerPrefabs[towerIndex];
+        Tower towerData = towerPrefab.GetComponent<Tower>();
+
+        if (towerData != null && coinSystem.coinCount >= towerData.cost)
         {
-            // Toggle the placement mode for the selected tower
-            isPlacingTower = !isPlacingTower;
-
-
-            // Set the current tower prefab on the TowerPlacer script
+            isPlacingTower = true;
             towerPlacerScript.SetCurrentTower(towerIndex, isPlacingTower);
         }
+        else
+        {
+            Debug.Log("Not enough coins!");
+        }
+    }
+
+    public void DeductCoins(int amount)
+    {
+        coinSystem.coinCount -= amount;
     }
 
 }

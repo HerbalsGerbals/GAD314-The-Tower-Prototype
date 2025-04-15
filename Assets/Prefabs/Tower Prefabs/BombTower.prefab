@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8029797199552316059}
   - component: {fileID: 5702012137003196363}
   - component: {fileID: -3613055690069553688}
+  - component: {fileID: -982187885160696060}
   m_Layer: 0
   m_Name: BombTower
   m_TagString: Untagged
@@ -179,9 +180,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10768dd1cd47b1e4aa68b30aa6c29af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 15
+  bombCost: 15
   bombProjectilePrefab: {fileID: 1477115038139901886, guid: 5c3a48081ab632543810dc4b5191f557, type: 3}
   firePoint: {fileID: 1470226120471790840}
   fireRate: 1
   fireCooldown: 0
   attackRange: 5
   rangeGizmoColor: {r: 0, g: 0, b: 1, a: 1}
+--- !u!114 &-982187885160696060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051765820062888502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff9783950b367148bb9ece13115adaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 15

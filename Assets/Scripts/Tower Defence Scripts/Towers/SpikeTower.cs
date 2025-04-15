@@ -2,7 +2,7 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.Tilemaps;
 
-public class SpikeTower : MonoBehaviour
+public class SpikeTower : Tower
 {
     [Header("Tower Settings")]
     [SerializeField] private GameObject spikeProjectile; 
@@ -15,7 +15,12 @@ public class SpikeTower : MonoBehaviour
     [SerializeField] private int spikeCount = 1; 
 
     [Header("Gizmos")]
-    [SerializeField] private Color rangeGizmoColor = Color.green; 
+    [SerializeField] private Color rangeGizmoColor = Color.green;
+
+    private void Awake()
+    {
+        cost = 10;
+    }
 
     private void Update()
     {

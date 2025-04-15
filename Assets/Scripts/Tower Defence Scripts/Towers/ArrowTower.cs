@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArrowTower : MonoBehaviour
+public class ArrowTower : Tower
 {
     [Header("Tower Settings")]
     [SerializeField] private GameObject projectilePrefab;
@@ -11,6 +11,11 @@ public class ArrowTower : MonoBehaviour
 
     [Header("Editor Gizmos")]
     [SerializeField] private Color rangeGizmoColor = Color.green;
+
+    private void Awake()
+    {
+        cost = 5;
+    }
 
     void Update()
     {

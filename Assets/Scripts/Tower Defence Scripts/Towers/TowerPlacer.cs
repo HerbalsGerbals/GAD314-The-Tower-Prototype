@@ -31,13 +31,23 @@ public class TowerPlacer : MonoBehaviour
 
             if (CanPlaceTower(cellPosition))
             {
-                PlaceTower(cellPosition);
-                isPlacingTower = false; // Disable placement after placing the tower
-                DestroyGhostTower(); // Destroy the ghost tower after placement
-            }
-            else
-            {
-                Debug.Log("❌ Can't place tower here!");
+                Tower tower = currentTowerPrefab.GetComponent<Tower>();
+                TowerUISelection towerUI = FindFirstObjectByType<TowerUISelection>();
+
+                if (tower != null && towerUI != null)
+                {
+                    if (towerUI.coinSystem.coinCount >= tower.cost)
+                    {
+                        towerUI.DeductCoins(tower.cost);
+                        PlaceTower(cellPosition);
+                        isPlacingTower = false;
+                        DestroyGhostTower();
+                    }
+                    else
+                    {
+                        Debug.Log("❌ Not enough coins to place this tower!");
+                    }
+                }
             }
         }
     }

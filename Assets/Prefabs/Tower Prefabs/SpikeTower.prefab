@@ -179,6 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699a2da34d59ebb45b9748e9230419f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 10
+  spikeCost: 10
   spikeProjectile: {fileID: 6575957100709910688, guid: 2cb159ed7ec38204aa78d80e2d453bcd, type: 3}
   firePoint: {fileID: 1470226120471790840}
   path: {fileID: 5248717669300574350, guid: a6d0f14889a31c04f9fd4240a581e45c, type: 3}

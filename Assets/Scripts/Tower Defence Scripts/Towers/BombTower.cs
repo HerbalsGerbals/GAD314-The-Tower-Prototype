@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BombTower : MonoBehaviour
+public class BombTower : Tower
 {
     [Header("Tower Settings")]
     [SerializeField] private GameObject bombProjectilePrefab;
@@ -12,6 +12,10 @@ public class BombTower : MonoBehaviour
     [Header("Gizmos")]
     [SerializeField] private Color rangeGizmoColor = Color.blue;
 
+    private void Awake()
+    {
+        cost = 15;
+    }
     void Update()
     {
         fireCooldown -= Time.deltaTime;
