@@ -44,7 +44,7 @@ public class ArrowTower : Tower
 
     GameObject FindNearestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Slimes");
         GameObject nearestEnemy = null;
         float shortestDistance = Mathf.Infinity;
 

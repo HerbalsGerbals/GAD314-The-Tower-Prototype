@@ -40,15 +40,15 @@ public class BombProjectile : MonoBehaviour
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D hit in hitCollider)
         {
-            BalloonEnemey enemey = hit.GetComponent<BalloonEnemey>();
+            EnemyMovement1 enemey = hit.GetComponent<EnemyMovement1>();
             if (enemey != null)
             {
                 enemey.TakeDamage(damage);
-                
+                Destroy(gameObject);
             }
         }
 
-        Destroy(gameObject);
+        
     }
 
     private void OnDrawGizmosSelected()

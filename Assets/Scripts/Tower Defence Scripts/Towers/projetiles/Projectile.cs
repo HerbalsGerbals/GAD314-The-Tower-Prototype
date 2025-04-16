@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
 
     private void HitTarget()
     {
-        BalloonEnemey enemy = target.GetComponent<BalloonEnemey>();
+        EnemyMovement1 enemy = target.GetComponent<EnemyMovement1>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);

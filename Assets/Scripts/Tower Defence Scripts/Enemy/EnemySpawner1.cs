@@ -11,17 +11,19 @@ public class EnemySpawner1 : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = 0.5f;
-    [SerializeField] private float timeBetweenWaves = 10;
-    [SerializeField] private float difficultyScalingFactor = 0.75f;
+    [SerializeField] private float timeBetweenWaves = 5;
+    [SerializeField] public float difficultyScalingFactor = 0.75f;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
-    private int currentWave = 1;
+    public int currentWave = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
+
+    EnemyMovement1 enemyMovement;
 
     private void Awake()
     {

@@ -65,7 +65,7 @@ public class SpikeProjectile : MonoBehaviour
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(transform.position, SpikeRadius);
         foreach (Collider2D hit in hitCollider)
         {
-            BalloonEnemey enemey = hit.GetComponent<BalloonEnemey>();
+            EnemyMovement1 enemey = hit.GetComponent<EnemyMovement1>();
             if (enemey != null)
             {
                 enemey.TakeDamage(damage);
