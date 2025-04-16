@@ -79,6 +79,7 @@ public class UIManager : MonoBehaviour
         GameObject slimeEnemy = GameObject.FindWithTag("Enemy");
 
         slimeEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        slimeEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void SlimeMovementStart()
