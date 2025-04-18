@@ -10,7 +10,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject closeButton;
     public void PlayGameButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Current Prototype");
     }
 
     public void InstructionsButton()
