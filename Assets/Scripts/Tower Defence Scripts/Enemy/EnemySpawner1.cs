@@ -17,6 +17,7 @@ public class EnemySpawner1 : MonoBehaviour
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
+    private int enemiesUnlocked = 1;
     public int currentWave = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
@@ -73,13 +74,20 @@ public class EnemySpawner1 : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
+
+        if (currentWave % 5 == 0 && enemiesUnlocked < enemyPrefabs.Length)
+        {
+            enemiesUnlocked++;
+        }
+
         StartCoroutine(StartWave());
     }
 
     private void SpawnEnemy()
     {
         Debug.Log("Spawn Enemy");
-        GameObject prefabToSpawn = enemyPrefabs[0];
+        int randomIndex = Random.Range(0, enemiesUnlocked);
+        GameObject prefabToSpawn = enemyPrefabs[randomIndex];
         Instantiate(prefabToSpawn, LevelManager1.main.startPoint.position, Quaternion.identity);
     }
 

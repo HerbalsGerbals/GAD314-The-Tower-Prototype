@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pixle Castle Background_0: 1731862787804318063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

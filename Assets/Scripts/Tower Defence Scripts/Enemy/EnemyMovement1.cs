@@ -8,12 +8,15 @@ public class EnemyMovement1 : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [Header("Attributes")]
-    [SerializeField] public float moveSpeed = 2f;
+    public float moveSpeed = 2f;
 
     [Header("Attributes")]
-    [SerializeField] public float maxHealth = 10f;
+    public float maxHealth = 10f;
 
-    public bool canChangeStats = true;
+    public float damage = 5f;
+
+    public TowerHealth towerHealth;
+
 
     private Transform target;
     private int pathIndex = 0;
@@ -23,8 +26,8 @@ public class EnemyMovement1 : MonoBehaviour
     private void Start()
     {
         target = LevelManager1.main.path[pathIndex];
+        towerHealth = FindAnyObjectByType<TowerHealth>();
 
-        canChangeStats = false;
     }
 
 
@@ -40,6 +43,7 @@ public class EnemyMovement1 : MonoBehaviour
             if (pathIndex == LevelManager1.main.path.Length)
             {
                 EnemySpawner1.onEnemyDestroy.Invoke();
+                towerHealth.TakeDamage(damage);
                 Destroy(gameObject);
                 return;
             }
@@ -49,14 +53,6 @@ public class EnemyMovement1 : MonoBehaviour
             }
         }
 
-        if (!canChangeStats)
-        {
-            maxHealth = maxHealth * Mathf.Pow(enemySpawner.currentWave, enemySpawner.difficultyScalingFactor);
-
-            moveSpeed = moveSpeed * Mathf.Pow(enemySpawner.currentWave, enemySpawner.difficultyScalingFactor);
-
-            canChangeStats = true;
-        }
     }
 
 
@@ -76,9 +72,4 @@ public class EnemyMovement1 : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void IncreaseStats()
-    {
-        maxHealth = maxHealth * 1.5f;
-        moveSpeed = moveSpeed * 1.5f;
-    }
 }

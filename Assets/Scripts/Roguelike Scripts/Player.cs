@@ -8,36 +8,36 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public float pHealth;
+    public float pMaxHealth = 20;
     [SerializeField] private Slider healthSlider;
 
     // Start is called before the first frame update
     void Start()
     {
-        pHealth = 10;
+        pHealth = pMaxHealth;
         healthSlider.value = pHealth;
+
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateUI();
+        
     }
 
     public void TakeDamage(float damage)
     {
         pHealth -= damage;
+        healthSlider.value = pHealth;
 
         if (pHealth <= 0)
         {
             //Death Logic currently resets scene
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Game Over");
         }
     }
 
-    public void UpdateUI()
-    {
-        healthSlider.value = pHealth;
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

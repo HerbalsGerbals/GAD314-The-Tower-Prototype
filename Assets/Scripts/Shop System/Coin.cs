@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            coinSystem.coinCount++;
+            coinSystem.coinCount += 2;
             Destroy(gameObject);
         }
     }
