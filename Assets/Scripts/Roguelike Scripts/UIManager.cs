@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
         GameObject slimeEnemy = GameObject.FindWithTag("Enemy");
 
         slimeEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        slimeEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
     }
 
     public void SlimeMovementStart()
@@ -100,6 +100,7 @@ public class UIManager : MonoBehaviour
         GameObject slimeEnemy = GameObject.FindWithTag("Enemy");
         yield return new WaitForSeconds(1f);
         slimeEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        slimeEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         Debug.Log("Coroutine Ended");
 
     }
