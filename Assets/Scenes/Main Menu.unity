@@ -1113,6 +1113,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928240603}
   m_CullTransparentMesh: 1
+--- !u!1 &994276465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994276467}
+  - component: {fileID: 994276466}
+  m_Layer: 0
+  m_Name: Close Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &994276466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994276465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537884b9f832bbe4d85a74960a3b1bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &994276467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994276465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.3749614, y: 3.0612736, z: -0.033359222}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1106962686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,19 +1749,19 @@ MonoBehaviour:
 
     Controls:
 
-    
+
 
     Towe Defence:
 
 
-    Using Left
-    Click, Click on the towers on the left side, then move them to where you want
-    to place them and Left click again to place the tower
+    Using Left Click,
+    Click on the towers on the left side, then move them to where you want to place
+    them and Left click again to place the tower
 
 
-    Switch view button
-    allows you to swap to the dungeon, which is where the player can kill monsters
-    to earn the coins they get to spend on the defence towers.
+    Switch view button allows
+    you to swap to the dungeon, which is where the player can kill monsters to earn
+    the coins they get to spend on the defence towers.
 
 
     Dungeon:
@@ -1963,3 +2007,4 @@ SceneRoots:
   - {fileID: 2103921482}
   - {fileID: 264690893}
   - {fileID: 1230626052}
+  - {fileID: 994276467}

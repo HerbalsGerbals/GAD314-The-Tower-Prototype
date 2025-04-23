@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CloseGame : MonoBehaviour
 {
-    [SerializeField] private GameObject closeButton;
+    // [SerializeField] private GameObject closeButton;
 
     private void Update()
     {
