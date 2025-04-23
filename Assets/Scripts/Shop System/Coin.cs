@@ -6,14 +6,14 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        coinSystem = FindObjectOfType<CoinSystem>();
+        coinSystem = Object.FindAnyObjectByType<CoinSystem>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            coinSystem.coinCount += 2;
+            coinSystem.coinCount += 1;
             Destroy(gameObject);
         }
     }

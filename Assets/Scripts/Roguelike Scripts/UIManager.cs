@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     {
         SwitchToTowerDefence();
         SlimeMovementStop();
+        PlayerMovementStop();
         towerCam.enabled = true;
         dungeonCam.enabled = false;
 
@@ -36,6 +37,9 @@ public class UIManager : MonoBehaviour
         //Stop Dungeon Enemy Movement
         SlimeMovementStop();
 
+        //Stop Player Character's Ability To Move
+        PlayerMovementStop();
+
         //Switch To Tower Camera
         towerCam.enabled = true;
         dungeonCam.enabled = false;
@@ -51,6 +55,9 @@ public class UIManager : MonoBehaviour
 
         //Start Dungeon Enemy Movement Again
         SlimeMovementStart();
+
+        //Give The Player Character The Ability To Move Again
+        PlayerMovementStart();
 
         //Switch To Dungeon Camera
         towerCam.enabled = false;
@@ -91,6 +98,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void PlayerMovementStop()
+    {
+        GameObject playerCharacter = GameObject.FindWithTag("Player");
+
+        playerCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public void PlayerMovementStart()
+    {
+        GameObject playerCharacter = GameObject.FindWithTag("Player");
+        playerCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        playerCharacter.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
     IEnumerator SlimeMovementStartDelay()
     {
         //Delays Enemy's Movement Starting Up By 1 Second 
@@ -99,6 +120,7 @@ public class UIManager : MonoBehaviour
         GameObject slimeEnemy = GameObject.FindWithTag("Enemy");
         yield return new WaitForSeconds(1f);
         slimeEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        slimeEnemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         Debug.Log("Coroutine Ended");
 
     }

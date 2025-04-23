@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    [SerializeField] private ScoreCounter scoreCounter;
 
     public int maxEnemyCount = 1;
 
@@ -36,7 +35,6 @@ public class EnemySpawner : MonoBehaviour
 
         Instantiate(enemyPrefab, pos, Quaternion.identity);
 
-        scoreCounter.IncreaseScore(1);
     }
 
 }

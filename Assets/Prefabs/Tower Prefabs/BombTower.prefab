@@ -180,8 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10768dd1cd47b1e4aa68b30aa6c29af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 15
-  bombCost: 15
+  cost: 10
   bombProjectilePrefab: {fileID: 1477115038139901886, guid: 5c3a48081ab632543810dc4b5191f557, type: 3}
   firePoint: {fileID: 1470226120471790840}
   fireRate: 1

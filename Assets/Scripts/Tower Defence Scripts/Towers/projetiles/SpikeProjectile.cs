@@ -7,21 +7,21 @@ public class SpikeProjectile : MonoBehaviour
     [SerializeField] private float damage = 5f;
 
 
-    [SerializeField] private bool disableGravityOnReach = true; 
-    private Vector3 targetPosition; 
-    private bool hasReachedTarget = false; 
-    private Rigidbody rb; 
+    [SerializeField] private bool disableGravityOnReach = true;
+    private Vector3 targetPosition;
+    private bool hasReachedTarget = false;
+    private Rigidbody rb;
 
-   
+
     public void Launch(Vector3 targetPos)
     {
-        targetPosition = targetPos; 
-        rb = GetComponent<Rigidbody>(); 
+        targetPosition = targetPos;
+        rb = GetComponent<Rigidbody>();
 
         if (rb != null)
         {
-            rb.isKinematic = false; 
-            rb.useGravity = false;  
+            rb.isKinematic = false;
+            rb.useGravity = false;
         }
     }
 
@@ -29,7 +29,7 @@ public class SpikeProjectile : MonoBehaviour
     {
         if (hasReachedTarget)
         {
-            return; 
+            return;
         }
 
         Vector3 direction = new Vector3(targetPosition.x - transform.position.x, targetPosition.y - transform.position.y, 0f);
@@ -40,8 +40,8 @@ public class SpikeProjectile : MonoBehaviour
 
         if (transform.position == targetPosition)
         {
-            hasReachedTarget = true; 
-            FreezeSpikePosition(); 
+            hasReachedTarget = true;
+            FreezeSpikePosition();
         }
     }
 
@@ -49,18 +49,18 @@ public class SpikeProjectile : MonoBehaviour
     {
         if (rb != null)
         {
-            rb.isKinematic = true; 
-            rb.linearVelocity = Vector3.zero; 
-            rb.angularVelocity = Vector3.zero; 
+            rb.isKinematic = true;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
 
             if (disableGravityOnReach)
             {
-                rb.useGravity = false; 
+                rb.useGravity = false;
             }
         }
     }
 
-    private void Spiked()
+  /*  private void Spiked()
     {
         Collider2D[] hitCollider = Physics2D.OverlapCircleAll(transform.position, SpikeRadius);
         foreach (Collider2D hit in hitCollider)
@@ -72,10 +72,18 @@ public class SpikeProjectile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
+    } */
 
     private void FixedUpdate()
     {
-        Spiked();
+        // Spiked();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Slimes"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

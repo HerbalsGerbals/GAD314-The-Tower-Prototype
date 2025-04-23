@@ -76,6 +76,7 @@ public class Enemy : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(0.15f);
         rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void SlimeMovement()
